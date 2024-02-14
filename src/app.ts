@@ -1,14 +1,21 @@
 import express from "express";
+import pc from "picocolors";
+import diariesRouter from "./routes/diaries";
 
 const PORT = 3000;
-const sayHello = () => console.log(`Servidor encendido en el puerto ${PORT}`);
+const sayHello = () =>
+  console.log(
+    pc.bgBlack(pc.green(`Servidor encendido en el puerto ${PORT} 🚀`))
+  );
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (_req, res) => {
-  console.log("Alguien hizo ping");
-  return res.send("Hola ping");
+app.get("/ping", (_req, res) => {
+  console.log(pc.bgBlack(pc.green("Alguien hizo ping")));
+  return res.send("Hola ping 🏓");
 });
+
+app.use("/api/diaries", diariesRouter);
 
 app.listen(PORT, sayHello);
