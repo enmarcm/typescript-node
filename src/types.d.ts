@@ -12,4 +12,7 @@ export interface DiaryEntry {
   comment: string;
 }
 
-export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, "id" | "date" | "weather">
+// export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, "id" | "date" | "weather">
+export type NonSensitiveInfoDiaryEntry = Omit<DiaryEntry, "comment">;
+
+
