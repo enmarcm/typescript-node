@@ -2,9 +2,7 @@ import diaryData from "../mocks/diaries.json";
 import {
   DiaryEntry,
   NewDiaryEntry,
-  NonSensitiveInfoDiaryEntry,
-  Visibility,
-  Weather,
+  NonSensitiveInfoDiaryEntry
 } from "../types";
 
 const diaries: Array<DiaryEntry> = diaryData as Array<DiaryEntry>;
