@@ -12,6 +12,8 @@ export interface DiaryEntry {
   comment: string;
 }
 
+export type NewDiaryEntry = Omit<DiaryEntry, "id">;
+
 // export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, "id" | "date" | "weather">
 export type NonSensitiveInfoDiaryEntry = Omit<DiaryEntry, "comment">;
 

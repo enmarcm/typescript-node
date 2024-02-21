@@ -17,4 +17,16 @@ diariesRouter.get("/", (_req, res) => {
   return res.send("Saving a new entry diary");
 });
 
+diariesRouter.post("/", (req, res) => {
+  const { date, weather, visibility, comment } = req.body;
+
+  const newDiaryEntry = diaryServices.addEntry({
+    date,
+    weather,
+    visibility,
+    comment,
+  });
+  return res.send(`Se agrego ${newDiaryEntry}`);
+});
+
 export default diariesRouter;

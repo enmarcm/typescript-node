@@ -1,5 +1,11 @@
 import diaryData from "../mocks/diaries.json";
-import { DiaryEntry, NonSensitiveInfoDiaryEntry } from "../types";
+import {
+  DiaryEntry,
+  NewDiaryEntry,
+  NonSensitiveInfoDiaryEntry,
+  Visibility,
+  Weather,
+} from "../types";
 
 const diaries: Array<DiaryEntry> = diaryData as Array<DiaryEntry>;
 
@@ -25,4 +31,11 @@ export const getEntriesWithoutSensitiveInfo =
       weather,
     }));
 
-export const addEntry = () => null;
+export const addEntry = (newEntry: NewDiaryEntry) => {
+  const diary: DiaryEntry = {
+    id: Math.max(...diaries.map((d) => d.id)) + 1,
+    ...newEntry,
+  };
+  diaries.push(diary);
+  return diary;
+};
