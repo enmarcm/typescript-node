@@ -19,3 +19,5 @@ app.get("/ping", (_req, res) => {
 app.use("/api/diaries", diariesRouter);
 
 app.listen(PORT, sayHello);
+
+
