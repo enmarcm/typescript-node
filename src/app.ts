@@ -18,6 +18,9 @@ app.get("/ping", (_req, res) => {
 
 app.use("/api/diaries", diariesRouter);
 
+/**
+ * Inicia el servidor en el puerto 3000
+ */
 app.listen(PORT, sayHello);
 
 
